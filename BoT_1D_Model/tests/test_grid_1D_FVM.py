@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from src.grid1D import Grid1D_FVM
+from src.grid_1D_FVM import Grid1D_FVM
 
 # Tests if grid works properly on a dummy grid with 3 cells of length dx
 

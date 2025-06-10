@@ -1,6 +1,6 @@
 import numpy as np
 
-class Grid1D_FVM:
+class grid_1D_FVM:
     def __init__(self, dx):
         self.dx = np.array(dx)
         self.n_cells = self.dx.size

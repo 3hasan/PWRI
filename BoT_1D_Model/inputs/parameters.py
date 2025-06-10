@@ -30,9 +30,9 @@ class Parameters:
         self.n_steps = int(self.t_total / self.dt)
 
         # Boundary Values 
-        self.Q_injection        = 5.0   # mL/min
+        self.Q_injection        = 5.0 / 60   # cm3/sec
         self.C_injection           = 20.0  # ppm
-        self.D = 0.1  # mm²/sec
+        self.D_x = 0.1  # mm²/sec
         self.P_left   = 1.0 # milibar
         self.P_right  = 0.0 # milibar
         self.P_top    = 1.0 # milibar  

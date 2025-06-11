@@ -53,13 +53,15 @@ class FlowSolver1D:
             b[0]    = q[0] * dx[0] + flux
 
         elif bc_type == 2:
-            # Robin on left
-            # alpha*(P[0]-P_env) - T[i+1]*(P[0]-P[1]) = q[0]*dx[0]
-            alpha = 1.0
-            P_env = 0.0
-            A[0, 0] = alpha + T[1]
-            A[0, 1] = -T[1]
-            b[0]    = q[0] * dx[0] + alpha * P_env
+            # Robin – Dirichlet
+            #  -T0 (P0 - P_env) + T1 (P1 - P0) = q0 Δx0
+            T0     = self.grid.transmissibility[0]     # 2 k / Δx  (already computed)
+            T1     = self.grid.transmissibility[1]
+            P_env  = self.params.P_left                # ambient pressure you set in test
+            A[0,0] = T0 + T1
+            A[0,1] = -T1
+            b[0]   = q[0]*dx[0] + T0 * P_env
+
 
         else:
             raise ValueError("bc_type must be 0, 1, or 2")

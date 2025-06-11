@@ -28,7 +28,7 @@ def Source_manufactured(x):
 def compute_L2_error(P_num, P_exact):
     return np.sqrt(np.mean((P_num - P_exact)**2))
 
-#Grid refinement 
+# Grid refinement 
 
 grid_sizes = [10, 100, 1_000, 10_000, 100_000]
 dx_list    = []

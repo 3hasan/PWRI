@@ -42,3 +42,4 @@ class grid_1D_FVM:
                 core_area * self.permeability_interfaces[i] /
                 (viscosity * dx_local)
             )
+        
